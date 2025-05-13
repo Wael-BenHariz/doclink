@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace JwtAuthDotNet9.Migrations
+namespace DocLink.Migrations
 {
     /// <inheritdoc />
     public partial class AddUserRole : Migration

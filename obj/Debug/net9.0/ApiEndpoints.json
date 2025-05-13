@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "JwtAuthDotNet9.Controllers.AuthController",
+    "ContainingType": "DocLink.Controllers.AuthController",
     "Method": "AuthenticatedOnlyEndpoint",
     "RelativePath": "api/Auth",
     "HttpMethod": "GET",
@@ -10,7 +10,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "JwtAuthDotNet9.Controllers.AuthController",
+    "ContainingType": "DocLink.Controllers.AuthController",
     "Method": "AdminOnlyEndpoint",
     "RelativePath": "api/Auth/admin-only",
     "HttpMethod": "GET",
@@ -20,7 +20,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "JwtAuthDotNet9.Controllers.AuthController",
+    "ContainingType": "DocLink.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -29,13 +29,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "JwtAuthDotNet9.Models.UserDto",
+        "Type": "DocLink.Models.UserDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "JwtAuthDotNet9.Models.TokenResponseDto",
+        "Type": "DocLink.Models.TokenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "ContainingType": "JwtAuthDotNet9.Controllers.AuthController",
+    "ContainingType": "DocLink.Controllers.AuthController",
     "Method": "RefreshToken",
     "RelativePath": "api/Auth/refresh-token",
     "HttpMethod": "POST",
@@ -55,13 +55,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "JwtAuthDotNet9.Models.RefreshTokenRequestDto",
+        "Type": "DocLink.Models.RefreshTokenRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "JwtAuthDotNet9.Models.TokenResponseDto",
+        "Type": "DocLink.Models.TokenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "ContainingType": "JwtAuthDotNet9.Controllers.AuthController",
+    "ContainingType": "DocLink.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/Auth/register",
     "HttpMethod": "POST",
@@ -81,13 +81,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "JwtAuthDotNet9.Models.UserDto",
+        "Type": "DocLink.Models.UserDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "JwtAuthDotNet9.Entities.User",
+        "Type": "DocLink.Entities.User",
         "MediaTypes": [
           "text/plain",
           "application/json",

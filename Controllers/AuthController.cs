@@ -1,10 +1,10 @@
-using JwtAuthDotNet9.Entities;
-using JwtAuthDotNet9.Models;
-using JwtAuthDotNet9.Services;
+using DocLink.Entities;
+using DocLink.Models;
+using DocLink.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JwtAuthDotNet9.Controllers
+namespace DocLink.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

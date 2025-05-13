@@ -1,5 +1,5 @@
-using JwtAuthDotNet9.Data;
-using JwtAuthDotNet9.Services;
+using DocLink.Data;
+using DocLink.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

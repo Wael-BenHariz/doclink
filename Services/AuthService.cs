@@ -1,6 +1,6 @@
-using JwtAuthDotNet9.Data;
-using JwtAuthDotNet9.Entities;
-using JwtAuthDotNet9.Models;
+using DocLink.Data;
+using DocLink.Entities;
+using DocLink.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace JwtAuthDotNet9.Services
+namespace DocLink.Services
 {
     public class AuthService(UserDbContext context, IConfiguration configuration) : IAuthService
     {
@@ -102,7 +102,7 @@ namespace JwtAuthDotNet9.Services
             {
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role.ToString(), user.Role.ToString())
             };
 
             var key = new SymmetricSecurityKey(

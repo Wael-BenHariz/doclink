@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "67yHYDtHq3U=",
+  "dgSpecHash": "4BitCT2+Ttg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Waelbhz\\source\\repos\\JwtAuthDotNet9-master\\JwtAuthDotNet9\\JwtAuthDotNet9.csproj",
+  "projectFilePath": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\DocLink.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Waelbhz\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Waelbhz\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

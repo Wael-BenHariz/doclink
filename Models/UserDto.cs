@@ -1,4 +1,4 @@
-namespace JwtAuthDotNet9.Models
+namespace DocLink.Models
 {
     public class UserDto
     {

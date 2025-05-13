@@ -4541,11 +4541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Waelbhz\\source\\repos\\JwtAuthDotNet9-master\\JwtAuthDotNet9\\JwtAuthDotNet9.csproj",
-      "projectName": "JwtAuthDotNet9",
-      "projectPath": "C:\\Users\\Waelbhz\\source\\repos\\JwtAuthDotNet9-master\\JwtAuthDotNet9\\JwtAuthDotNet9.csproj",
+      "projectUniqueName": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\DocLink.csproj",
+      "projectName": "DocLink",
+      "projectPath": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\DocLink.csproj",
       "packagesPath": "C:\\Users\\Waelbhz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Waelbhz\\source\\repos\\JwtAuthDotNet9-master\\JwtAuthDotNet9\\obj\\",
+      "outputPath": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

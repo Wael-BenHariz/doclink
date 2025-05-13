@@ -1,7 +1,7 @@
-using JwtAuthDotNet9.Entities;
-using JwtAuthDotNet9.Models;
+using DocLink.Entities;
+using DocLink.Models;
 
-namespace JwtAuthDotNet9.Services
+namespace DocLink.Services
 {
     public interface IAuthService
     {
