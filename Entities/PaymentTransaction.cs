@@ -35,7 +35,7 @@ namespace DocLink.Models
 
         [Required]
         [ForeignKey("User")]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
     }
 }

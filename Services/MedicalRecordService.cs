@@ -17,7 +17,7 @@ namespace MedicalAppointment.Services
         public async Task<IEnumerable<PatientMedicalRecord>> GetRecordsByPatientAsync(string patientId)
         {
             return await _context.PatientMedicalRecords
-                .Where(r => r.PatientId == patientId)
+                .Where(r => r.PatientId.Equals(patientId))
                 .ToListAsync();
         }
 

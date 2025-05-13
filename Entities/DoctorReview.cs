@@ -12,12 +12,12 @@ namespace DocLink.Models
 
         [Required]
         [ForeignKey("Patient")]
-        public string PatientId { get; set; }
+        public int PatientId { get; set; }
         public User Patient { get; set; }
 
         [Required]
         [ForeignKey("Doctor")]
-        public string DoctorId { get; set; }
+        public int DoctorId { get; set; }
         public User Doctor { get; set; }
 
         [Required]

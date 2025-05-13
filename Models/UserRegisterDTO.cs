@@ -1,4 +1,4 @@
-﻿namespace DocLink.Models
+namespace DocLink.Models
 {
     public class UserRegisterDTO
     {

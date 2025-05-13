@@ -1,4 +1,3 @@
-
 using DocLink.Data;
 using DocLink.Models;
 using Microsoft.EntityFrameworkCore;
@@ -22,14 +21,14 @@ namespace DocLink.Services
         public async Task<IEnumerable<Models.Appointment>> GetAppointmentsByPatientAsync(string patientId)
         {
             return await _context.Appointments
-                .Where(a => a.PatientId == patientId)
+                .Where(a => a.PatientId.Equals(patientId)  )
                 .ToListAsync();
         }
 
         public async Task<IEnumerable<Models.Appointment>> GetAppointmentsByDoctorAsync(string doctorId)
         {
             return await _context.Appointments
-                .Where(a => a.DoctorId == doctorId)
+                .Where(a => a.DoctorId.Equals(doctorId))
                 .ToListAsync();
         }
 

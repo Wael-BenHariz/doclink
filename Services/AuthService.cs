@@ -51,7 +51,7 @@ namespace DocLink.Services
 
             user.Username = request.Username;
             user.PasswordHash = hashedPassword;
-
+        //    user.FirstName = request.FirstName;
             context.Users.Add(user);
             await context.SaveChangesAsync();
 

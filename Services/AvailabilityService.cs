@@ -1,5 +1,4 @@
 using DocLink.Data;
-
 using DocLink.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +16,7 @@ namespace DocLink.Services
         public async Task<IEnumerable<DoctorAvailability>> GetAvailabilitiesByDoctorAsync(string doctorId)
         {
             return await _context.DoctorAvailabilities
-                .Where(a => a.DoctorId == doctorId)
+                .Where(a => a.DoctorId.Equals(doctorId)  )
                 .ToListAsync();
         }
 

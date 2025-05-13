@@ -1,5 +1,4 @@
 using DocLink.Data;
-
 using DocLink.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,14 +16,14 @@ namespace DocLink.Services
         public async Task<IEnumerable<DoctorReview>> GetReviewsForDoctorAsync(string doctorId)
         {
             return await _context.DoctorReviews
-                .Where(r => r.DoctorId == doctorId)
+                .Where(r => r.DoctorId.Equals(doctorId) )
                 .ToListAsync();
         }
 
         public async Task<IEnumerable<DoctorReview>> GetReviewsByPatientAsync(string patientId)
         {
             return await _context.DoctorReviews
-                .Where(r => r.PatientId == patientId)
+                .Where(r => r.PatientId.Equals(patientId))
                 .ToListAsync();
         }
 

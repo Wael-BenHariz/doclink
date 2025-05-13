@@ -21,7 +21,7 @@ namespace DocLink.Services
         public async Task<IEnumerable<PaymentTransaction>> GetPaymentsByUserAsync(string userId)
         {
             return await _context.PaymentTransactions
-                .Where(p => p.UserId == userId)
+                .Where(p => p.UserId.Equals(userId))
                 .ToListAsync();
         }
 
