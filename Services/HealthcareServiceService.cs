@@ -1,50 +1,46 @@
+// Services/HealthcareServiceService.cs
 using DocLink.Data;
 using DocLink.Models;
+using DocLink.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace DocLink.Services
 {
-    public class HealthcareServiceService : IHealthcareServiceService
+    public class HealthcareServiceService(UserDbContext context) : IHealthcareServiceService
     {
-        private readonly UserDbContext _context;
-
-        public HealthcareServiceService(UserDbContext context)
+        public async Task<HealthcareService> CreateAsync(HealthcareService service)
         {
-            _context = context;
+            context.HealthcareServices.Add(service);
+            await context.SaveChangesAsync();
+            return service;
         }
 
-        public async Task<IEnumerable<HealthcareService>> GetServicesByDoctorAsync(string doctorId)
+        public async Task<bool> DeleteAsync(int id)
         {
-            return await _context.HealthcareServices
-                .Where(s => s.DoctorId.Equals(doctorId))
+            var service = await context.HealthcareServices.FindAsync(id);
+            if (service is null)
+                return false;
+
+            context.HealthcareServices.Remove(service);
+            return await context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<IEnumerable<HealthcareService>> GetByDoctorAsync(int doctorId)
+        {
+            return await context.HealthcareServices
+                .Where(s => s.DoctorId == doctorId)
                 .ToListAsync();
         }
 
-        public async Task<HealthcareService> GetServiceByIdAsync(int id)
+        public async Task<HealthcareService?> GetByIdAsync(int id)
         {
-            return await _context.HealthcareServices.FindAsync(id);
+            return await context.HealthcareServices.FindAsync(id);
         }
 
-        public async Task AddServiceAsync(HealthcareService service)
+        public async Task<bool> UpdateAsync(HealthcareService service)
         {
-            _context.HealthcareServices.Add(service);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task UpdateServiceAsync(HealthcareService service)
-        {
-            _context.HealthcareServices.Update(service);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteServiceAsync(int id)
-        {
-            var service = await _context.HealthcareServices.FindAsync(id);
-            if (service != null)
-            {
-                _context.HealthcareServices.Remove(service);
-                await _context.SaveChangesAsync();
-            }
+            context.HealthcareServices.Update(service);
+            return await context.SaveChangesAsync() > 0;
         }
     }
 }

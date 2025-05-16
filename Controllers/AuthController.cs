@@ -1,6 +1,6 @@
-using DocLink.Entities;
+using DocLink.DTOs;
 using DocLink.Models;
-using DocLink.Services;
+using DocLink.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

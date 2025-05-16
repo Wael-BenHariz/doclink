@@ -1,91 +1,78 @@
 using DocLink.DTOs;
-using DocLink.Entities;
+using DocLink.Models;
+using DocLink.Services;
+using DocLink.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
 
 namespace DocLink.Controllers
 {
-    [Route("api/users")]
+    [Route("api/[controller]")]
     [ApiController]
-
-    public class UserController : ControllerBase
+    [Authorize]
+    public class UserController(IUserService userService) : ControllerBase
     {
-        private readonly UserManager<User> _userManager;
-
-        public UserController(UserManager<User> userManager)
-        {
-            _userManager = userManager;
-        }
-
-     
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<IEnumerable<User>>> GetAll()
         {
-            var users = await _userManager.Users
-                .Select(u => new
-                {
-                    u.Id,
-                    u.FirstName,
-                    u.LastName,
-                    u.Email,
-                    Role = u.Role.ToString()
-                })
-                .ToListAsync();
-
+            var users = await userService.GetAllAsync();
             return Ok(users);
         }
 
-        // ? Récupérer les utilisateurs par rôle
-        [HttpGet("role/{role}")]
-        public async Task<IActionResult> GetUsersByRole(string role)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<User>> GetById(int id)
         {
-            if (!Enum.TryParse(typeof(UserRole), role, true, out var userRole))
-            {
-                return BadRequest("Invalid role. Use 'Patient', 'Doctor' or 'Admin'.");
-            }
+            var user = await userService.GetByIdAsync(id);
+            if (user is null)
+                return NotFound();
 
-            var users = await _userManager.Users
-                .Where(u => u.Role == (UserRole)userRole)
-                .Select(u => new
-                {
-                    u.Id,
-                    u.FirstName,
-                    u.LastName,
-                    u.Email,
-                    Role = u.Role.ToString()
-                })
-                .ToListAsync();
-
-            return Ok(users);
+            return Ok(user);
         }
 
-      
-        [HttpPut("{userId}/role")]
-        public async Task<IActionResult> UpdateUserRole(string userId, [FromBody] UpdateRoleDto model)
+        [HttpGet("doctors")]
+        public async Task<ActionResult<IEnumerable<User>>> GetDoctors()
         {
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-            {
-                return NotFound("User not found.");
-            }
+            var doctors = await userService.GetDoctorsAsync();
+            return Ok(doctors);
+        }
 
-            if (!Enum.TryParse(typeof(UserRole), model.Role, true, out var newRole))
-            {
-                return BadRequest("Invalid role. Use 'Patient', 'Doctor' or 'Admin'.");
-            }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UserUpdateDto userUpdate)
+        {
+            if (id != userUpdate.Id)
+                return BadRequest();
 
-            user.Role = (UserRole)newRole;
-            var result = await _userManager.UpdateAsync(user);
+            var result = await userService.UpdateAsync(userUpdate);
+            if (!result)
+                return NotFound();
 
-            if (!result.Succeeded)
-            {
-                return BadRequest(result.Errors);
-            }
+            return NoContent();
+        }
 
-            return Ok(new { message = "User role updated successfully." });
+        [HttpPut("{id}/complete-profile")]
+        [Authorize(Roles = "Doctor")]
+        public async Task<IActionResult> CompleteProfile(int id, DoctorProfileDto profile)
+        {
+            if (id != profile.Id)
+                return BadRequest();
+
+            var result = await userService.CompleteDoctorProfileAsync(profile);
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await userService.DeleteAsync(id);
+            if (!result)
+                return NotFound();
+
+            return NoContent();
         }
     }
 }

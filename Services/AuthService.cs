@@ -1,6 +1,7 @@
 using DocLink.Data;
-using DocLink.Entities;
+using DocLink.DTOs;
 using DocLink.Models;
+using DocLink.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -51,7 +52,8 @@ namespace DocLink.Services
 
             user.Username = request.Username;
             user.PasswordHash = hashedPassword;
-        //    user.FirstName = request.FirstName;
+            user.Role = request.Role;
+            //    user.FirstName = request.FirstName;
             context.Users.Add(user);
             await context.SaveChangesAsync();
 

@@ -1,63 +1,57 @@
+// Services/AppointmentService.cs
 using DocLink.Data;
 using DocLink.Models;
+using DocLink.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace DocLink.Services
 {
-    public class AppointmentService : IAppointmentService
+    public class AppointmentService(UserDbContext context) : IAppointmentService
     {
-        private readonly UserDbContext _context;
-
-        public AppointmentService(UserDbContext context)
+        public async Task<Appointment> CreateAsync(Appointment appointment)
         {
-            _context = context;
+            context.Appointments.Add(appointment);
+            await context.SaveChangesAsync();
+            return appointment;
         }
 
-        public async Task<Models.Appointment> GetAppointmentByIdAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            return await _context.Appointments.FindAsync(id);
+            var appointment = await context.Appointments.FindAsync(id);
+            if (appointment is null)
+                return false;
+
+            context.Appointments.Remove(appointment);
+            return await context.SaveChangesAsync() > 0;
         }
 
-        public async Task<IEnumerable<Models.Appointment>> GetAppointmentsByPatientAsync(string patientId)
+        public async Task<IEnumerable<Appointment>> GetByDoctorAsync(int doctorId)
         {
-            return await _context.Appointments
-                .Where(a => a.PatientId.Equals(patientId)  )
+            return await context.Appointments
+                .Where(a => a.DoctorId == doctorId)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Models.Appointment>> GetAppointmentsByDoctorAsync(string doctorId)
+        public async Task<IEnumerable<Appointment>> GetByPatientAsync(int patientId)
         {
-            return await _context.Appointments
-                .Where(a => a.DoctorId.Equals(doctorId))
+            return await context.Appointments
+                .Where(a => a.PatientId == patientId)
                 .ToListAsync();
         }
 
-        public async Task AddAppointmentAsync(Models.Appointment appointment)
+        public async Task<Appointment?> GetByIdAsync(int id)
         {
-            _context.Appointments.Add(appointment);
-            await _context.SaveChangesAsync();
+            return await context.Appointments.FindAsync(id);
         }
 
-        public async Task UpdateAppointmentAsync(Models.Appointment appointment)
+        public async Task<bool> UpdateStatusAsync(int id, AppointmentStatus status)
         {
-            _context.Appointments.Update(appointment);
-            await _context.SaveChangesAsync();
-        }
+            var appointment = await context.Appointments.FindAsync(id);
+            if (appointment is null)
+                return false;
 
-        public async Task DeleteAppointmentAsync(int id)
-        {
-            var appointment = await _context.Appointments.FindAsync(id);
-            if (appointment != null)
-            {
-                _context.Appointments.Remove(appointment);
-                await _context.SaveChangesAsync();
-            }
+            appointment.Status = status;
+            return await context.SaveChangesAsync() > 0;
         }
-
-        Task<IEnumerable<Models.Appointment>> IAppointmentService.GetAppointmentsByPatientAsync(string patientId)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
