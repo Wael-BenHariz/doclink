@@ -10,6 +10,27 @@ namespace DocLink.Controllers
     [ApiController]
     public class AuthController(IAuthService authService) : ControllerBase
     {
+
+        [HttpPost("register/patient")]
+        public async Task<ActionResult<User>> RegisterPatient(PatientRegisterDto request)
+        {
+            var user = await authService.RegisterPatientAsync(request);
+            if (user is null)
+                return BadRequest("Username already exists.");
+
+            return Ok(user);
+        }
+
+        [HttpPost("register/doctor")]
+        public async Task<ActionResult<User>> RegisterDoctor(DoctorRegisterDto request)
+        {
+            var user = await authService.RegisterDoctorAsync(request);
+            if (user is null)
+                return BadRequest("Username already exists.");
+
+            return Ok(user);
+        }
+        /*
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register(UserDto request)
         {
@@ -18,7 +39,7 @@ namespace DocLink.Controllers
                 return BadRequest("Username already exists.");
 
             return Ok(user);
-        }
+        }*/
 
         [HttpPost("login")]
         public async Task<ActionResult<TokenResponseDto>> Login(UserDto request)

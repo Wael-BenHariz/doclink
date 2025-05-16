@@ -214,15 +214,41 @@
   },
   {
     "ContainingType": "DocLink.Controllers.AuthController",
-    "Method": "Register",
-    "RelativePath": "api/Auth/register",
+    "Method": "RegisterDoctor",
+    "RelativePath": "api/Auth/register/doctor",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "DocLink.DTOs.UserDto",
+        "Type": "DocLink.DTOs.DoctorRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DocLink.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DocLink.Controllers.AuthController",
+    "Method": "RegisterPatient",
+    "RelativePath": "api/Auth/register/patient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DocLink.DTOs.PatientRegisterDto",
         "IsRequired": true
       }
     ],

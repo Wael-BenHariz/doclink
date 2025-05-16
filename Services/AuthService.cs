@@ -122,5 +122,64 @@ namespace DocLink.Services
 
             return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
         }
+
+
+
+
+
+        public async Task<User?> RegisterPatientAsync(PatientRegisterDto request)
+        {
+            if (await context.Users.AnyAsync(u => u.Username == request.Username))
+            {
+                return null;
+            }
+
+            var user = new User
+            {
+                Username = request.Username,
+                PasswordHash = new PasswordHasher<User>().HashPassword(null, request.Password),
+                Role = UserRole.Patient,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                PhoneNumber = request.PhoneNumber,
+                Email = request.Email,
+                ProfilePhotoUrl = request.ProfilePhotoUrl
+            };
+
+            context.Users.Add(user);
+            await context.SaveChangesAsync();
+
+            return user;
+        }
+
+        public async Task<User?> RegisterDoctorAsync(DoctorRegisterDto request)
+        {
+            if (await context.Users.AnyAsync(u => u.Username == request.Username))
+            {
+                return null;
+            }
+
+            var user = new User
+            {
+                Username = request.Username,
+                PasswordHash = new PasswordHasher<User>().HashPassword(null, request.Password),
+                Role = UserRole.Doctor,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                PhoneNumber = request.PhoneNumber,
+                Email = request.Email,
+                Speciality = request.Speciality,
+                Description = request.Description,
+                Diploma = request.Diploma,
+                ProfilePhotoUrl = request.ProfilePhotoUrl,
+                ClinicId = request.ClinicId,
+                IsProfileComplete = false // Doctor profiles need verification
+            };
+
+            context.Users.Add(user);
+            await context.SaveChangesAsync();
+
+            return user;
+        }
     }
 }
