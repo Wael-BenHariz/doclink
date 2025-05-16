@@ -14,20 +14,31 @@ namespace DocLink.Services
 {
     public class AuthService(UserDbContext context, IConfiguration configuration) : IAuthService
     {
-        public async Task<TokenResponseDto?> LoginAsync(UserDto request)
+        public async Task<AuthResponseDto?> LoginAsync(LoginDto request)
         {
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
+            var user = await context.Users
+                .Include(u => u.Clinic) // Include clinic if needed
+                .FirstOrDefaultAsync(u => u.Username == request.Username);
+
             if (user is null)
             {
                 return null;
             }
+
             if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password)
                 == PasswordVerificationResult.Failed)
             {
                 return null;
             }
 
-            return await CreateTokenResponse(user);
+            var accessToken = CreateToken(user);
+            var userDto = MapUserToDto(user);
+
+            return new AuthResponseDto
+            {
+                User = userDto,
+                AccessToken = accessToken
+            };
         }
 
         private async Task<TokenResponseDto> CreateTokenResponse(User? user)
@@ -98,14 +109,15 @@ namespace DocLink.Services
             return refreshToken;
         }
 
+
         private string CreateToken(User user)
         {
             var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Role.ToString(), user.Role.ToString())
-            };
+    {
+        new Claim(ClaimTypes.Name, user.Username),
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.Role, user.Role.ToString())
+    };
 
             var key = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(configuration.GetValue<string>("AppSettings:Token")!));
@@ -116,11 +128,31 @@ namespace DocLink.Services
                 issuer: configuration.GetValue<string>("AppSettings:Issuer"),
                 audience: configuration.GetValue<string>("AppSettings:Audience"),
                 claims: claims,
-                expires: DateTime.UtcNow.AddDays(1),
+                expires: DateTime.UtcNow.AddDays(1), // Token expiration
                 signingCredentials: creds
             );
 
             return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
+        }
+
+        private UserAuthDto MapUserToDto(User user)
+        {
+            return new UserAuthDto
+            {
+                Id = user.Id,
+                Username = user.Username,
+                Role = user.Role,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                ProfilePhotoUrl = user.ProfilePhotoUrl,
+                IsProfileComplete = user.IsProfileComplete,
+                Speciality = user.Speciality,
+                Description = user.Description,
+                Diploma = user.Diploma,
+                ClinicId = user.ClinicId
+            };
         }
 
 

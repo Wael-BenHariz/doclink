@@ -11,13 +11,14 @@ namespace DocLink.Controllers
     [Authorize]
     public class MedicalClinicController(IMedicalClinicService clinicService) : ControllerBase
     {
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MedicalClinic>>> GetAll()
         {
             var clinics = await clinicService.GetAllAsync();
             return Ok(clinics);
         }
-
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<MedicalClinic>> GetById(int id)
         {

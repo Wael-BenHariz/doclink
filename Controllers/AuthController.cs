@@ -42,7 +42,7 @@ namespace DocLink.Controllers
         }*/
 
         [HttpPost("login")]
-        public async Task<ActionResult<TokenResponseDto>> Login(UserDto request)
+        public async Task<ActionResult<AuthResponseDto>> Login(LoginDto request)
         {
             var result = await authService.LoginAsync(request);
             if (result is null)

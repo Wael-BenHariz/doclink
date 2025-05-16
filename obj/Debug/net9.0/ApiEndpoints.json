@@ -170,13 +170,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "DocLink.DTOs.UserDto",
+        "Type": "DocLink.DTOs.LoginDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DocLink.DTOs.TokenResponseDto",
+        "Type": "DocLink.DTOs.AuthResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
