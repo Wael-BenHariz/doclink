@@ -7,9 +7,16 @@ namespace DocLink.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Doctor")]
     public class HealthcareServiceController(IHealthcareServiceService healthcareService) : ControllerBase
     {
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<HealthcareService>>> GetAll()
+        {
+            var services = await healthcareService.GetAll();
+            return Ok(services);
+        }
+
         [HttpGet("doctor/{doctorId}")]
         public async Task<ActionResult<IEnumerable<HealthcareService>>> GetByDoctor(int doctorId)
         {

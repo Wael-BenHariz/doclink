@@ -22,68 +22,6 @@ namespace DocLink.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DocLink.Entities.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("ClinicId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Diploma")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsProfileComplete")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProfilePhotoUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RefreshToken")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("RefreshTokenExpiryTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Speciality")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClinicId");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("DocLink.Models.Appointment", b =>
                 {
                     b.Property<int>("Id")
@@ -333,24 +271,77 @@ namespace DocLink.Migrations
                     b.ToTable("PaymentTransactions");
                 });
 
-            modelBuilder.Entity("DocLink.Entities.User", b =>
+            modelBuilder.Entity("DocLink.Models.User", b =>
                 {
-                    b.HasOne("DocLink.Models.MedicalClinic", "Clinic")
-                        .WithMany("Doctors")
-                        .HasForeignKey("ClinicId");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Navigation("Clinic");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ClinicId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Diploma")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsProfileComplete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePhotoUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Speciality")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClinicId");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("DocLink.Models.Appointment", b =>
                 {
-                    b.HasOne("DocLink.Entities.User", "Doctor")
+                    b.HasOne("DocLink.Models.User", "Doctor")
                         .WithMany("DoctorAppointments")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("DocLink.Entities.User", "Patient")
+                    b.HasOne("DocLink.Models.User", "Patient")
                         .WithMany("PatientAppointments")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -363,7 +354,7 @@ namespace DocLink.Migrations
 
             modelBuilder.Entity("DocLink.Models.DoctorAvailability", b =>
                 {
-                    b.HasOne("DocLink.Entities.User", "Doctor")
+                    b.HasOne("DocLink.Models.User", "Doctor")
                         .WithMany("Availabilities")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -374,13 +365,13 @@ namespace DocLink.Migrations
 
             modelBuilder.Entity("DocLink.Models.DoctorReview", b =>
                 {
-                    b.HasOne("DocLink.Entities.User", "Doctor")
+                    b.HasOne("DocLink.Models.User", "Doctor")
                         .WithMany("ReviewsReceived")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("DocLink.Entities.User", "Patient")
+                    b.HasOne("DocLink.Models.User", "Patient")
                         .WithMany("ReviewsWritten")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -393,7 +384,7 @@ namespace DocLink.Migrations
 
             modelBuilder.Entity("DocLink.Models.HealthcareService", b =>
                 {
-                    b.HasOne("DocLink.Entities.User", "Doctor")
+                    b.HasOne("DocLink.Models.User", "Doctor")
                         .WithMany("ServicesOffered")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -404,7 +395,7 @@ namespace DocLink.Migrations
 
             modelBuilder.Entity("DocLink.Models.PatientMedicalRecord", b =>
                 {
-                    b.HasOne("DocLink.Entities.User", "Patient")
+                    b.HasOne("DocLink.Models.User", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -421,7 +412,7 @@ namespace DocLink.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("DocLink.Entities.User", "User")
+                    b.HasOne("DocLink.Models.User", "User")
                         .WithMany("PaymentTransactions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -432,7 +423,26 @@ namespace DocLink.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("DocLink.Entities.User", b =>
+            modelBuilder.Entity("DocLink.Models.User", b =>
+                {
+                    b.HasOne("DocLink.Models.MedicalClinic", "Clinic")
+                        .WithMany("Doctors")
+                        .HasForeignKey("ClinicId");
+
+                    b.Navigation("Clinic");
+                });
+
+            modelBuilder.Entity("DocLink.Models.Appointment", b =>
+                {
+                    b.Navigation("Payment");
+                });
+
+            modelBuilder.Entity("DocLink.Models.MedicalClinic", b =>
+                {
+                    b.Navigation("Doctors");
+                });
+
+            modelBuilder.Entity("DocLink.Models.User", b =>
                 {
                     b.Navigation("Availabilities");
 
@@ -447,16 +457,6 @@ namespace DocLink.Migrations
                     b.Navigation("ReviewsWritten");
 
                     b.Navigation("ServicesOffered");
-                });
-
-            modelBuilder.Entity("DocLink.Models.Appointment", b =>
-                {
-                    b.Navigation("Payment");
-                });
-
-            modelBuilder.Entity("DocLink.Models.MedicalClinic", b =>
-                {
-                    b.Navigation("Doctors");
                 });
 #pragma warning restore 612, 618
         }
