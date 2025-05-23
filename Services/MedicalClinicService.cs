@@ -37,6 +37,12 @@ namespace DocLink.Services
 
         public async Task<bool> UpdateAsync(MedicalClinic clinic)
         {
+
+            var existingEntity = context.MedicalClinics.Local.FirstOrDefault(e => e.Id == clinic.Id);
+            if (existingEntity != null)
+            {
+                context.Entry(existingEntity).State = EntityState.Detached;
+            }
             context.MedicalClinics.Update(clinic);
             return await context.SaveChangesAsync() > 0;
         }

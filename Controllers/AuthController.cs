@@ -14,6 +14,7 @@ namespace DocLink.Controllers
         [HttpPost("register/patient")]
         public async Task<ActionResult<User>> RegisterPatient(PatientRegisterDto request)
         {
+          
             var user = await authService.RegisterPatientAsync(request);
             if (user is null)
                 return BadRequest("Username already exists.");

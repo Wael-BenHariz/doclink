@@ -18,6 +18,7 @@ namespace DocLink.Controllers
             var clinics = await clinicService.GetAllAsync();
             return Ok(clinics);
         }
+
         [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<MedicalClinic>> GetById(int id)
@@ -30,7 +31,7 @@ namespace DocLink.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         public async Task<ActionResult<MedicalClinic>> Create(MedicalClinic clinic)
         {
             var createdClinic = await clinicService.CreateAsync(clinic);
@@ -44,9 +45,13 @@ namespace DocLink.Controllers
             if (id != clinic.Id)
                 return BadRequest();
 
+            var existingClinic = await clinicService.GetByIdAsync(id);
+            if (existingClinic is null)
+                return NotFound();
+
             var result = await clinicService.UpdateAsync(clinic);
             if (!result)
-                return NotFound();
+                return StatusCode(500, "An error occurred while updating the clinic");
 
             return NoContent();
         }
@@ -55,9 +60,13 @@ namespace DocLink.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
+            var existingClinic = await clinicService.GetByIdAsync(id);
+            if (existingClinic is null)
+                return NotFound();
+
             var result = await clinicService.DeleteAsync(id);
             if (!result)
-                return NotFound();
+                return StatusCode(500, "An error occurred while deleting the clinic");
 
             return NoContent();
         }
