@@ -12,7 +12,6 @@ namespace DocLink.Data
         public DbSet<HealthcareService> HealthcareServices { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<PaymentTransaction> PaymentTransactions { get; set; }
-        public DbSet<AppointmentTimeSlot> AppointmentTimeSlots { get; set; }
 
         public DbSet<PatientMedicalRecord> PatientMedicalRecords { get; set; }
 

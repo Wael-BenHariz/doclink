@@ -66,6 +66,8 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowAngularDevClient");
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();// This allows serving files from wwwroot
+
 app.UseAuthorization();
 
 app.MapControllers();

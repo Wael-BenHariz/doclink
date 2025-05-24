@@ -10,6 +10,8 @@ namespace DocLink.Services
     {
         public async Task<HealthcareService> CreateAsync(HealthcareService service)
         {
+
+            
             context.HealthcareServices.Add(service);
             await context.SaveChangesAsync();
             return service;
@@ -23,6 +25,11 @@ namespace DocLink.Services
 
             context.HealthcareServices.Remove(service);
             return await context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<ICollection<HealthcareService>> GetAll()
+        {
+            return await context.HealthcareServices.ToListAsync();
         }
 
         public async Task<IEnumerable<HealthcareService>> GetByDoctorAsync(int doctorId)

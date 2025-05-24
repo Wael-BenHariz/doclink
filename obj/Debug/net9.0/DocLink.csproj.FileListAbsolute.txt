@@ -313,6 +313,7 @@ C:\Users\Waelbhz\source\repos\DocLink\DocLink\obj\Debug\net9.0\refint\DocLink.dl
 C:\Users\Waelbhz\source\repos\DocLink\DocLink\obj\Debug\net9.0\DocLink.pdb
 C:\Users\Waelbhz\source\repos\DocLink\DocLink\obj\Debug\net9.0\DocLink.genruntimeconfig.cache
 C:\Users\Waelbhz\source\repos\DocLink\DocLink\obj\Debug\net9.0\ref\DocLink.dll
+C:\Users\Waelbhz\source\repos\DocLink\DocLink\bin\Debug\net9.0\DocLink.staticwebassets.runtime.json
 C:\Users\Waelbhz\source\repos\DocLink\DocLink\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Amir\Desktop\doclink\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Amir\Desktop\doclink\bin\Debug\net9.0\appsettings.json
@@ -471,4 +472,5 @@ C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\refint\DocLink.dll
 C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\DocLink.pdb
 C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\DocLink.genruntimeconfig.cache
 C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\ref\DocLink.dll
+C:\Users\Amir\Desktop\doclink\bin\Debug\net9.0\DocLink.staticwebassets.runtime.json
 C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

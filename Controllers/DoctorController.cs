@@ -24,7 +24,7 @@ namespace DocLink.Controllers
         public async Task<IActionResult> GetAvailableDoctors()
         {
             var doctors = await _context.Users
-                .Where(u => u.Role == UserRole.Doctor && u.IsProfileComplete)
+                .Where(u => u.Role == UserRole.Doctor)
                 .Select(u => new DoctorDto
                 {
                     Id = u.Id,
@@ -49,7 +49,7 @@ namespace DocLink.Controllers
         public async Task<IActionResult> GetDoctorById(int id)
         {
             var doctor = await _context.Users
-                .Where(u => u.Id == id && u.Role == UserRole.Doctor && u.IsProfileComplete)
+                .Where(u => u.Id == id && u.Role == UserRole.Doctor )
                 .Select(u => new DoctorDto
                 {
                     Id = u.Id,

@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Amir\\Desktop\\doclink\\wwwroot\\uploads\\profile_photos\\809b3966-d472-45d0-ad96-47f708922677.png",
+      "PackagePath": "staticwebassets\\uploads\\profile_photos\\809b3966-d472-45d0-ad96-47f708922677.png"
+    },
+    {
+      "Id": "C:\\Users\\Amir\\Desktop\\doclink\\wwwroot\\uploads\\profile_photos\\9f971236-9374-42d0-8b32-c73ca70a7bd6.png",
+      "PackagePath": "staticwebassets\\uploads\\profile_photos\\9f971236-9374-42d0-8b32-c73ca70a7bd6.png"
+    },
+    {
+      "Id": "C:\\Users\\Amir\\Desktop\\doclink\\wwwroot\\uploads\\profile_photos\\a8576b0b-c2a6-4046-9d09-8267b197f79b.png",
+      "PackagePath": "staticwebassets\\uploads\\profile_photos\\a8576b0b-c2a6-4046-9d09-8267b197f79b.png"
+    },
+    {
+      "Id": "C:\\Users\\Amir\\Desktop\\doclink\\wwwroot\\uploads\\profile_photos\\bfbdcd8b-4098-40e8-a75c-77664e7a3f6d.png",
+      "PackagePath": "staticwebassets\\uploads\\profile_photos\\bfbdcd8b-4098-40e8-a75c-77664e7a3f6d.png"
+    },
+    {
+      "Id": "C:\\Users\\Amir\\Desktop\\doclink\\wwwroot\\uploads\\profile_photos\\da08f6f2-9db1-49b2-bb4e-c1ec49b9cb30.jpg",
+      "PackagePath": "staticwebassets\\uploads\\profile_photos\\da08f6f2-9db1-49b2-bb4e-c1ec49b9cb30.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.DocLink.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.DocLink.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.DocLink.props",
+      "PackagePath": "build\\DocLink.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.DocLink.props",
+      "PackagePath": "buildMultiTargeting\\DocLink.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.DocLink.props",
+      "PackagePath": "buildTransitive\\DocLink.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
