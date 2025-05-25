@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -6,25 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DocLink.Migrations
 {
     /// <inheritdoc />
-    public partial class @new : Migration
+    public partial class m2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "AppointmentTimeSlots",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Time = table.Column<TimeSpan>(type: "time", nullable: false),
-                    Display = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AppointmentTimeSlots", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "MedicalClinic",
                 columns: table => new
@@ -54,8 +40,8 @@ namespace DocLink.Migrations
                     Role = table.Column<int>(type: "int", nullable: false),
                     RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Speciality = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -285,9 +271,6 @@ namespace DocLink.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "AppointmentTimeSlots");
-
             migrationBuilder.DropTable(
                 name: "DoctorAvailabilities");
 

@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\uploads\\profile_photos\\2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\profile_photos\\2fa902a0-e2df-412c-994a-24decbdc395a.jpg"
+    },
+    {
       "Id": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\uploads\\profile_photos\\809b3966-d472-45d0-ad96-47f708922677.png",
       "PackagePath": "staticwebassets\\uploads\\profile_photos\\809b3966-d472-45d0-ad96-47f708922677.png"
     },

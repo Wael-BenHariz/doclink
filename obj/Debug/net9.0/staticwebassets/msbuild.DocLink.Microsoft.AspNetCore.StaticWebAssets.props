@@ -1,5 +1,23 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\2fa902a0-e2df-412c-994a-24decbdc395a.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DocLink</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DocLink</BasePath>
+      <RelativePath>uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zfs71mlott</Fingerprint>
+      <Integrity>v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\2fa902a0-e2df-412c-994a-24decbdc395a.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\809b3966-d472-45d0-ad96-47f708922677.png'))">
       <SourceType>Package</SourceType>
       <SourceId>DocLink</SourceId>

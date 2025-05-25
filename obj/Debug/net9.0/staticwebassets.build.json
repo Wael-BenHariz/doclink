@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wpAKq3nJWj4Io8gwxUENY9S1PGJVdygG/8VsM+TtJN0=",
+  "Hash": "NrUnxGH5H7PBjbZQwiEjKyMcTFfBd9WAamTrKJYCm28=",
   "Source": "DocLink",
   "BasePath": "_content/DocLink",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\uploads\\profile_photos\\2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "SourceId": "DocLink",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\",
+      "BasePath": "_content/DocLink",
+      "RelativePath": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zfs71mlott",
+      "Integrity": "v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profile_photos\\2fa902a0-e2df-412c-994a-24decbdc395a.jpg"
+    },
     {
       "Identity": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\uploads\\profile_photos\\809b3966-d472-45d0-ad96-47f708922677.png",
       "SourceId": "DocLink",
@@ -123,6 +144,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "AssetFile": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\uploads\\profile_photos\\2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164283"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 12:38:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.zfs71mlott.jpg",
+      "AssetFile": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\uploads\\profile_photos\\2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164283"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 12:38:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zfs71mlott"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg="
+        }
+      ]
+    },
     {
       "Route": "uploads/profile_photos/809b3966-d472-45d0-ad96-47f708922677.82rumh3m6i.png",
       "AssetFile": "C:\\Users\\Waelbhz\\source\\repos\\DocLink\\DocLink\\wwwroot\\uploads\\profile_photos\\809b3966-d472-45d0-ad96-47f708922677.png",

@@ -56,26 +56,6 @@ namespace DocLink.Migrations
                     b.ToTable("Appointments");
                 });
 
-            modelBuilder.Entity("DocLink.Models.AppointmentTimeSlot", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Display")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeSpan>("Time")
-                        .HasColumnType("time");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AppointmentTimeSlots");
-                });
-
             modelBuilder.Entity("DocLink.Models.DoctorAvailability", b =>
                 {
                     b.Property<int>("Id")

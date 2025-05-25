@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocLink")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15c0523b54ffcc9dc13c0ed18d81d052a6568a5e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9a1ccb589c45ed8e18c7f6728e3d0a0896742eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocLink")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocLink")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

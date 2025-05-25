@@ -3,6 +3,88 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "AssetFile": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164283"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 12:38:35 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.zfs71mlott.jpg",
+      "AssetFile": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164283"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 12:38:35 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zfs71mlott"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5RM2DOyjZ5kzorCMpW1mVuXaGkPc8ZfHSse/cun5vg="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/profile_photos/2fa902a0-e2df-412c-994a-24decbdc395a.jpg"
+        }
+      ]
+    },
+    {
       "Route": "uploads/profile_photos/809b3966-d472-45d0-ad96-47f708922677.82rumh3m6i.png",
       "AssetFile": "uploads/profile_photos/809b3966-d472-45d0-ad96-47f708922677.png",
       "Selectors": [],
