@@ -7,7 +7,7 @@ namespace DocLink.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Doctor")]
+    [Authorize]
     public class DoctorAvailabilityController(IDoctorAvailabilityService availabilityService) : ControllerBase
     {
         [HttpGet("doctor/{doctorId}")]
