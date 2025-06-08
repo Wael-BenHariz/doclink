@@ -37,8 +37,8 @@ namespace DocLink.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Patient")]
-        public async Task<ActionResult<Appointment>> Create(Appointment appointment)
+        [Authorize]
+        public async Task<ActionResult<Appointment>> Create([FromBody] Appointment appointment)
         {
             var createdAppointment = await appointmentService.CreateAsync(appointment);
             return CreatedAtAction(nameof(GetById), new { id = createdAppointment.Id }, createdAppointment);

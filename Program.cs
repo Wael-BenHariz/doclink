@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
+using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,6 +57,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<UserDbContext>();
+
+    // Apply migrations if needed
+    context.Database.Migrate();
+
+    // Seed admin
+    await DataSeeder.SeedAdminUserAsync(context);
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

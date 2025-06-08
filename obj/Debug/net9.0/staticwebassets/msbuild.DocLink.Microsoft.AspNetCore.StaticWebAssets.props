@@ -54,6 +54,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\9f971236-9374-42d0-8b32-c73ca70a7bd6.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\a8028a7c-69b0-49e9-87b8-1db2c7234efe.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DocLink</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DocLink</BasePath>
+      <RelativePath>uploads/profile_photos/a8028a7c-69b0-49e9-87b8-1db2c7234efe.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6ghrbevkcy</Fingerprint>
+      <Integrity>6psJgJ0G1dCsvqHRST6nFwGpj5V1UwN4SCPnqivwpk0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\a8028a7c-69b0-49e9-87b8-1db2c7234efe.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\a8576b0b-c2a6-4046-9d09-8267b197f79b.png'))">
       <SourceType>Package</SourceType>
       <SourceId>DocLink</SourceId>
@@ -71,6 +89,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\a8576b0b-c2a6-4046-9d09-8267b197f79b.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\aeac9582-33f3-4249-b8b2-176179a3a989.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DocLink</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DocLink</BasePath>
+      <RelativePath>uploads/profile_photos/aeac9582-33f3-4249-b8b2-176179a3a989.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nnx8g5u3cc</Fingerprint>
+      <Integrity>nb+fNGD+IMu+NGIDNEvtFsWzycBWoILvu9GswVra+cw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\aeac9582-33f3-4249-b8b2-176179a3a989.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\b7ad4261-f1e9-490a-b2a5-0d564e751553.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DocLink</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DocLink</BasePath>
+      <RelativePath>uploads/profile_photos/b7ad4261-f1e9-490a-b2a5-0d564e751553.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>klrvgr63yb</Fingerprint>
+      <Integrity>iOacXIAELg2UE8e2hTqDe2j5+eePn3VRXD+LZFHIXzY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\b7ad4261-f1e9-490a-b2a5-0d564e751553.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\bfbdcd8b-4098-40e8-a75c-77664e7a3f6d.png'))">
       <SourceType>Package</SourceType>
@@ -90,6 +144,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\bfbdcd8b-4098-40e8-a75c-77664e7a3f6d.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\c5d7984c-25f7-4cdb-849d-4baa2328c640.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DocLink</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DocLink</BasePath>
+      <RelativePath>uploads/profile_photos/c5d7984c-25f7-4cdb-849d-4baa2328c640.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>klrvgr63yb</Fingerprint>
+      <Integrity>iOacXIAELg2UE8e2hTqDe2j5+eePn3VRXD+LZFHIXzY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\c5d7984c-25f7-4cdb-849d-4baa2328c640.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\da08f6f2-9db1-49b2-bb4e-c1ec49b9cb30.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>DocLink</SourceId>
@@ -107,6 +179,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\da08f6f2-9db1-49b2-bb4e-c1ec49b9cb30.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\e9d9a37c-b4bf-4798-81a3-8f1220fda7e7.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DocLink</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DocLink</BasePath>
+      <RelativePath>uploads/profile_photos/e9d9a37c-b4bf-4798-81a3-8f1220fda7e7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nnx8g5u3cc</Fingerprint>
+      <Integrity>nb+fNGD+IMu+NGIDNEvtFsWzycBWoILvu9GswVra+cw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\e9d9a37c-b4bf-4798-81a3-8f1220fda7e7.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\f75759e0-f077-427b-ac56-f683bf4b078c.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DocLink</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DocLink</BasePath>
+      <RelativePath>uploads/profile_photos/f75759e0-f077-427b-ac56-f683bf4b078c.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>o7uyqzu3as</Fingerprint>
+      <Integrity>dDMAIikt3y1CQhuFnKj6sStzZczurNoUBfeAgpv0BmU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\profile_photos\f75759e0-f077-427b-ac56-f683bf4b078c.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

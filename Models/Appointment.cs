@@ -23,15 +23,15 @@ namespace DocLink.Models
         [Required]
         [ForeignKey("Patient")]
         public int PatientId { get; set; }
-        public User Patient { get; set; }
+        public User? Patient { get; set; }
 
         [Required]
         [ForeignKey("Doctor")]
         public int DoctorId { get; set; }
-        public User Doctor { get; set; }
+        public User? Doctor { get; set; }
 
         [Required]
-        public AppointmentStatus Status { get; set; }
+        public AppointmentStatus Status { get; set; } = AppointmentStatus.Pending;
 
         [Required]
         [StringLength(1000)]

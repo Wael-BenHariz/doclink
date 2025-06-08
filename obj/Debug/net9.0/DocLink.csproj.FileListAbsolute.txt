@@ -473,3 +473,4 @@ C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\DocLink.genruntimeconfig.cache
 C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\ref\DocLink.dll
 C:\Users\Amir\Desktop\doclink\bin\Debug\net9.0\DocLink.staticwebassets.runtime.json
 C:\Users\Amir\Desktop\doclink\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\Waelbhz\source\repos\DocLink\DocLink\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
